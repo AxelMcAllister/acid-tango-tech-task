@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "462e6991-8cff-4efc-9fa1-cf23f3e75ed6",
+		"name": "Acid Tango Tech Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AlterStock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/64784c29896ddc2e06974037/variants/64784c29896ddc2e06974037/stock/1000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"64784c29896ddc2e06974037",
+						"variants",
+						"64784c29896ddc2e06974037",
+						"stock",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products?name=FASHION T-SHIRT",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "FASHION T-SHIRT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products?stockRelativeWeight=0&soldUnitsRelativeWeight=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "stockRelativeWeight",
+							"value": "0"
+						},
+						{
+							"key": "soldUnitsRelativeWeight",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
