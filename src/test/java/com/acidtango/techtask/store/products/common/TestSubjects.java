@@ -9,21 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TestSubjects {
-    public static ProductVariant productVariant(ProductSize size) {
-        return ProductVariant.builder()
-                .id(new ObjectId())
-                .size(size)
-                .stock(5)
-                .soldUnits(10)
-                .build();
-    }
-
-    public static Product product(String name) {
-        return Product.create(name, Arrays.asList(
-                productVariant(ProductSize.SMALL),
-                productVariant(ProductSize.MEDIUM),
-                productVariant(ProductSize.LARGE)));
-    }
 
     public static List<Product> products() {
         return
