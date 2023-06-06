@@ -1,13 +1,14 @@
-package com.acidtango.techtask.store.products.application.rest.controllers;
+package com.acidtango.techtask.store.products.infrastructure.in.rest.controllers;
 
-import com.acidtango.techtask.store.products.application.rest.dto.ListProductsProductDto;
-import com.acidtango.techtask.store.products.application.rest.dto.ListProductsProductVariantDto;
-import com.acidtango.techtask.store.products.application.rest.dto.ListProductsRequestDto;
-import com.acidtango.techtask.store.products.application.rest.dto.ListProductsResponseDto;
+import com.acidtango.techtask.store.products.infrastructure.in.rest.dto.ListProductsProductDto;
+import com.acidtango.techtask.store.products.infrastructure.in.rest.dto.ListProductsProductVariantDto;
+import com.acidtango.techtask.store.products.infrastructure.in.rest.dto.ListProductsRequestDto;
+import com.acidtango.techtask.store.products.infrastructure.in.rest.dto.ListProductsResponseDto;
 import com.acidtango.techtask.store.products.application.usecases.ListProductsUseCase;
 import com.acidtango.techtask.store.products.domain.criteria.ListProductsSortingCriteria;
 import com.acidtango.techtask.store.products.domain.criteria.RelativeWeight;
 import com.acidtango.techtask.store.products.domain.models.entities.Product;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,12 +19,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
+@RequiredArgsConstructor
 public class ListProductsController {
     private final ListProductsUseCase listProductsUseCase;
-
-    public ListProductsController(ListProductsUseCase listProductsUseCase) {
-        this.listProductsUseCase = listProductsUseCase;
-    }
 
     @GetMapping
     ListProductsResponseDto listSorted(
@@ -41,8 +39,8 @@ public class ListProductsController {
         return toResponseDto(
                 listProductsUseCase.execute(
                         new ListProductsSortingCriteria(
-                                request.stockRelativeWeight().map(RelativeWeight::new).orElse(new RelativeWeight()),
-                                request.soldUnitsRelativeWeight().map(RelativeWeight::new).orElse(new RelativeWeight())
+                                request.stockRelativeWeight().map(RelativeWeight::new).orElse(RelativeWeight.zero()),
+                                request.soldUnitsRelativeWeight().map(RelativeWeight::new).orElse(RelativeWeight.zero())
                         )
                 )
         );

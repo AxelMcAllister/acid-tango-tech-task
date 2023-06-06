@@ -1,4 +1,4 @@
-package com.acidtango.techtask.store.products.application.rest.dto;
+package com.acidtango.techtask.store.products.infrastructure.in.rest.dto;
 
 import com.acidtango.techtask.store.products.domain.models.valueobjects.ProductSize;
 import lombok.Builder;

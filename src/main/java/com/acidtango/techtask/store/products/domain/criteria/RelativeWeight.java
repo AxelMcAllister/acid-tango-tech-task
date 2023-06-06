@@ -11,8 +11,8 @@ public class RelativeWeight extends ValueObject implements Comparable<RelativeWe
         this.weight = weight;
     }
 
-    public RelativeWeight() {
-        this.weight = 0;
+    public static RelativeWeight zero(){
+        return new RelativeWeight(0);
     }
 
     public RelativeWeight plus(RelativeWeight other) {

@@ -1,10 +1,10 @@
-package com.acidtango.techtask.store.products.infrastructure.mongo.repositories;
+package com.acidtango.techtask.store.products.infrastructure.out.mongo.repositories;
 
 import com.acidtango.techtask.store.products.domain.criteria.ListProductsSortingCriteria;
 import com.acidtango.techtask.store.products.domain.models.entities.Product;
 import com.acidtango.techtask.store.products.domain.models.entities.ProductVariant;
 import com.acidtango.techtask.store.products.domain.repositories.ProductRepository;
-import com.acidtango.techtask.store.products.infrastructure.mongo.models.entities.ProductMongoEntity;
+import com.acidtango.techtask.store.products.infrastructure.out.mongo.models.entities.ProductMongoEntity;
 import org.bson.types.ObjectId;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
@@ -51,7 +51,7 @@ public class ProductMongoRepository implements ProductRepository {
 
     @Override
     public Optional<ProductVariant> findByVariantId(ObjectId productId, ObjectId variantId) {
-        return findById(productId).map(product -> product.getVariantById(variantId));
+        return findById(productId).map(product -> product.getVariantByIdOrThrow(variantId));
 
     }
 }

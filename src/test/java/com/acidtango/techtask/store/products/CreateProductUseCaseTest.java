@@ -1,8 +1,8 @@
 package com.acidtango.techtask.store.products;
 
 import com.acidtango.techtask.store.products.common.TestSubjects;
-import com.acidtango.techtask.store.products.application.rest.dto.ListProductsResponseDto;
-import com.acidtango.techtask.store.products.infrastructure.mongo.repositories.ProductSpringDataMongoRepository;
+import com.acidtango.techtask.store.products.infrastructure.in.rest.dto.ListProductsResponseDto;
+import com.acidtango.techtask.store.products.infrastructure.out.mongo.repositories.ProductSpringDataMongoRepository;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

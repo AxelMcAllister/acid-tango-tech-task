@@ -1,7 +1,6 @@
-package com.acidtango.techtask.store.products.application.rest.dto;
+package com.acidtango.techtask.store.products.infrastructure.in.rest.dto;
 
 import lombok.Builder;
-import org.bson.types.ObjectId;
 
 import java.util.List;
 
