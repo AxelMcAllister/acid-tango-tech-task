@@ -1,4 +1,4 @@
-package com.acidtango.techtask.store.products.infrastructure.console.repositories;
+package com.acidtango.techtask.store.products.infrastructure.out.console.repositories;
 
 import com.acidtango.techtask.store.products.domain.criteria.ListProductsSortingCriteria;
 import com.acidtango.techtask.store.products.domain.models.entities.Product;
@@ -47,7 +47,7 @@ public class ProductConsoleRepository implements ProductRepository {
 
     @Override
     public Optional<ProductVariant> findByVariantId(ObjectId productId, ObjectId variantId) {
-        Optional<ProductVariant> variant = findById(productId).map(product -> product.getVariantById(variantId));
+        Optional<ProductVariant> variant = findById(productId).map(product -> product.getVariantByIdOrThrow(variantId));
         variant.ifPresentOrElse(this::print, () -> print("Variant " + variantId + " not found"));
         return variant;
     }

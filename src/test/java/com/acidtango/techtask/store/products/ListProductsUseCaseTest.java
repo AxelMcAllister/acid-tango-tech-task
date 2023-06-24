@@ -1,9 +1,9 @@
 package com.acidtango.techtask.store.products;
 
 import com.acidtango.techtask.store.products.common.TestSubjects;
-import com.acidtango.techtask.store.products.application.rest.dto.ListProductsResponseDto;
-import com.acidtango.techtask.store.products.infrastructure.mongo.models.entities.ProductMongoEntity;
-import com.acidtango.techtask.store.products.infrastructure.mongo.repositories.ProductSpringDataMongoRepository;
+import com.acidtango.techtask.store.products.infrastructure.in.rest.dto.ListProductsResponseDto;
+import com.acidtango.techtask.store.products.infrastructure.out.mongo.models.entities.ProductMongoEntity;
+import com.acidtango.techtask.store.products.infrastructure.out.mongo.repositories.ProductSpringDataMongoRepository;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

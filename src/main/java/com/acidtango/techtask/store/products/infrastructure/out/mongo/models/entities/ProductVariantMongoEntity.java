@@ -1,4 +1,4 @@
-package com.acidtango.techtask.store.products.infrastructure.mongo.models.entities;
+package com.acidtango.techtask.store.products.infrastructure.out.mongo.models.entities;
 
 import com.acidtango.techtask.store.products.domain.models.valueobjects.ProductSize;
 import com.acidtango.techtask.store.products.domain.models.entities.ProductVariant;

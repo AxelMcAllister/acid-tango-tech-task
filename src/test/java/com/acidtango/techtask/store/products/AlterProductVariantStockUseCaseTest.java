@@ -1,8 +1,8 @@
 package com.acidtango.techtask.store.products;
 
 import com.acidtango.techtask.store.products.domain.exceptions.InsufficientStockException;
-import com.acidtango.techtask.store.products.infrastructure.mongo.models.entities.ProductMongoEntity;
-import com.acidtango.techtask.store.products.infrastructure.mongo.repositories.ProductSpringDataMongoRepository;
+import com.acidtango.techtask.store.products.infrastructure.out.mongo.models.entities.ProductMongoEntity;
+import com.acidtango.techtask.store.products.infrastructure.out.mongo.repositories.ProductSpringDataMongoRepository;
 import io.restassured.http.ContentType;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.AfterEach;
@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
+@SuppressWarnings("all")
 class AlterProductVariantStockUseCaseTest {
 
     public static final String PRODUCT_ID = products().get(0).getId().toString();

@@ -2,8 +2,8 @@
 
 ### Implementing a DDD back-end solution with Spring Boot
 
-Here I present my solution to the code challenge proposed by Acid Tango, for which you can read its **Product Requirement
-Document** [here](https://github.com/AxelMcAllister/acid-tango-tech-task/blob/master/ITX%20Caso%20Pra%CC%81ctico%20Backend%20Tools%202023.pdf).
+Here I present my solution to the code challenge proposed by Acid Tango, for which you can read its **Product Requirement Document
+** [here](https://github.com/AxelMcAllister/acid-tango-tech-task/blob/master/ITX%20Caso%20Pra%CC%81ctico%20Backend%20Tools%202023.pdf).
 
 ## Previous analysis
 
@@ -12,8 +12,8 @@ From these requirements, I extracted some of the core concepts, like **product**
 And from these concepts, I also established **store** as the only **Bounded Context**.
 
 A real store would have several **Aggregates** like **orders**, **customers**, etc, but for the sake of simplicity, and as the requirements do not
-say anything about other **Aggregates**, I will stick to just one: **products**.
-Having only one **Aggregate** also means that I don't need **Domain Events** to communicate between **Aggregates**.
+say anything about other **Aggregates**, I will stick to just one: **products**. Having only one **Aggregate** also means that I don't need **Domain
+Events** to communicate between **Aggregates**.
 
 ## Implementation and design choices
 

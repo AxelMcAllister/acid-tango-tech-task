@@ -4,9 +4,8 @@ import com.acidtango.techtask.store.products.application.usecases.CreateProductU
 import com.acidtango.techtask.store.products.common.TestSubjects;
 import com.acidtango.techtask.store.products.domain.models.entities.Product;
 import com.acidtango.techtask.store.products.domain.repositories.ProductRepository;
-import com.acidtango.techtask.store.products.domain.services.CreateProductService;
 import com.acidtango.techtask.store.products.domain.services.ListProductService;
-import com.acidtango.techtask.store.products.infrastructure.console.repositories.ProductConsoleRepository;
+import com.acidtango.techtask.store.products.infrastructure.out.console.repositories.ProductConsoleRepository;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;
 
@@ -18,16 +17,15 @@ public class CreateProductTest {
     void createAProduct() {
         ProductRepository productRepository = new ProductConsoleRepository();
 
-        CreateProductService createProductService = new CreateProductService(productRepository);
         ListProductService listProductService = new ListProductService(productRepository);
 
-        CreateProductUseCase createProductUseCase = new CreateProductUseCase(createProductService);
+        CreateProductUseCase createProductUseCase = new CreateProductUseCase(productRepository);
 
         Product testProduct = TestSubjects.products().get(0);
 
         ObjectId productId = createProductUseCase.execute(testProduct.getName());
 
-        assertEquals(testProduct.getName(), listProductService.findById(productId).getName());
+        assertEquals(testProduct.getName(), listProductService.findByIdOrThrow(productId).getName());
         assertEquals(1, listProductService.findAll().size());
     }
 }
